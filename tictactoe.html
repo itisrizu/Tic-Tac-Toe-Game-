@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>
+			Tic Tac Toe Game
+		</title>
+		<style>
+		a:visited{
+		onclick:return false;
+		}
+		</style>
+
+				<script>
+				var x=1;
+				function myFunction(v,v2){
+				if(x%2!==0){
+				document.getElementById(v).innerHTML="O";
+				document.getElementById(v2).onclick="return false";
+				x++;
+				}
+				else{
+				document.getElementById(v).innerHTML="X";
+				document.getElementById(v2).onclick="return false";
+				x++;
+				}
+				checkStatus();
+				
+				}
+				function checkStatus(){
+					if(document.getElementById("a").innerHTML===document.getElementById("b").innerHTML&&document.getElementById("a").innerHTML===document.getElementById("c").innerHTML){
+						document.getElementById("Com").innerHTML="Won";
+						document.getElementById("a").style.backgroundColor="#87ceeb";
+						document.getElementById("b").style.backgroundColor="#87ceeb";
+						document.getElementById("c").style.backgroundColor="#87ceeb";
+						closeGrids();
+					}
+				
+				
+					if(document.getElementById("d").innerHTML===document.getElementById("e").innerHTML&&document.getElementById("d").innerHTML===document.getElementById("f").innerHTML){
+						document.getElementById("Com").innerHTML="Won";
+						document.getElementById("d").style.backgroundColor="#87ceeb";
+						document.getElementById("e").style.backgroundColor="#87ceeb";
+						document.getElementById("f").style.backgroundColor="#87ceeb";
+						closeGrids();
+					}
+					
+					if(document.getElementById("g").innerHTML===document.getElementById("h").innerHTML&&document.getElementById("g").innerHTML===document.getElementById("i").innerHTML){
+						document.getElementById("Com").innerHTML="Won";
+						document.getElementById("g").style.backgroundColor="#87ceeb";
+						document.getElementById("h").style.backgroundColor="#87ceeb";
+						document.getElementById("i").style.backgroundColor="#87ceeb";
+						closeGrids();
+					}
+					
+					if(document.getElementById("a").innerHTML===document.getElementById("d").innerHTML&&document.getElementById("a").innerHTML===document.getElementById("g").innerHTML){
+						document.getElementById("Com").innerHTML="Won";
+						document.getElementById("a").style.backgroundColor="#87ceeb";
+						document.getElementById("d").style.backgroundColor="#87ceeb";
+						document.getElementById("g").style.backgroundColor="#87ceeb";
+						closeGrids();
+					}
+					
+					if(document.getElementById("b").innerHTML===document.getElementById("e").innerHTML&&document.getElementById("e").innerHTML===document.getElementById("h").innerHTML){
+						document.getElementById("Com").innerHTML="Won";
+						document.getElementById("b").style.backgroundColor="#87ceeb";
+						document.getElementById("e").style.backgroundColor="#87ceeb";
+						document.getElementById("h").style.backgroundColor="#87ceeb";
+						closeGrids();
+					}/*
+					
+					if(document.getElementById("c").innerHTML===document.getElementById("f").innerHTML&&document.getElementById("c").innerHTML===document.getElementById("i").innerHTML){
+						document.getElementById("Com").innerHTML="Won";
+						document.getElementById("c").style.backgroundColor="#87ceeb";
+						document.getElementById("f").style.backgroundColor="#87ceeb";
+						document.getElementById("i").style.backgroundColor="#87ceeb";
+						closeGrids();
+					}*/
+					
+					if(document.getElementById("a").innerHTML===document.getElementById("e").innerHTML&&document.getElementById("a").innerHTML===document.getElementById("i").innerHTML){
+						document.getElementById("Com").innerHTML="Won";
+						document.getElementById("a").style.backgroundColor="#87ceeb";
+						document.getElementById("e").style.backgroundColor="#87ceeb";
+						document.getElementById("i").style.backgroundColor="#87ceeb";
+						closeGrids();
+					}
+					
+					if(document.getElementById("c").innerHTML===document.getElementById("e").innerHTML&&document.getElementById("c").innerHTML===document.getElementById("g").innerHTML){
+						document.getElementById("Com").innerHTML="Won";
+						document.getElementById("c").style.backgroundColor="#87ceeb";
+						document.getElementById("e").style.backgroundColor="#87ceeb";
+						document.getElementById("g").style.backgroundColor="#87ceeb";
+						closeGrids();
+					}
+					
+				}
+				
+				function closeGrids(){
+				document.getElementById("aa").onclick="return false";
+				document.getElementById("bb").onclick="return false";
+				document.getElementById("cc").onclick="return false";
+				document.getElementById("dd").onclick="return false";
+				document.getElementById("ee").onclick="return false";
+				document.getElementById("ff").onclick="return false";
+				document.getElementById("gg").onclick="return false";
+				document.getElementById("hh").onclick="return false";
+				document.getElementById("ii").onclick="return false";
+				}
+				</script>
+			
+					
+	</head>
+	<center>
+	<body>
+		<h2 style="font-family:Comic sans ms,Verdana;color:red">
+			Tic Tac Toe Game!
+		</h2>
+		<div id="outer_box" style="width:270px;height:270px">
+		
+			<table>
+				<tr>
+					<a id="aa" onclick="myFunction('a','aa')">
+					<div id="a" style="line-height:88px;font-size:5em;vertical-align:middle;float:left;height:88px;width:88px;text-align:center;border-right:1px solid #98bf21;border-bottom:1px solid #98bf21;border-left:1px solid white ;border-top:1px solid white">
+					 
+							
+						</div>	
+							
+	
+							
+							
+						
+					</a>
+					<a id="bb" onclick="myFunction('b','bb')">
+					<div id="b" style="line-height:88px;background-color:white;font-size:5em;vertical-align:middle;float:left;height:88px;width:88px;text-align:center;border-left:1px solid #98bf21;border-bottom:1px solid #98bf21;border-right:1px solid #98bf21;border-top:1px solid white">
+					
+					</div>
+					</a>
+					<a id="cc" onclick="myFunction('c','cc')">
+					<div id="c" style="line-height:88px;background-color:white;font-size:5em;vertical-align:middle;float:right;height:88px;width:88px;text-align:center;border-left:1px solid #98bf21;border-bottom:1px solid #98bf21;border-top:1px solid white;border-right:1px solid white">
+					
+					</div>
+					</a>
+				</tr>
+				<tr>
+					<a id="dd" onclick="myFunction('d','dd')">
+						<div id="d" style="float:left;line-height:88px;height:88px;width:88px;text-align:center;border-top:1px solid #98bf21;border-right:1px solid #98bf21;border-bottom:1px solid #98bf21;border-left:1px solid white;font-size:5em;vertical-align:middle">
+				
+							
+						
+					</div>
+					</a>
+					
+					<a id="ee" onclick="myFunction('e','ee')">
+					<div id="e" style="float:left;height:88px;width:88px;text-align:center;border:1px solid #98bf21;line-height:88px;font-size:5em;vertical-align:middle">
+					
+					</div>
+					</a>
+					
+					<a id="ff" onclick="myFunction('f','ff')">
+					<div id="f" style="float:left;height:88px;width:88px;text-align:center;border-left:1px solid #98bf21;border-bottom:1px solid #98bf21;border-top:1px solid #98bf21;border-right:px solid white;line-height:88px;font-size:5em;vertical-align:middle">
+					
+					</div>
+					</a>
+					
+					
+				</tr>
+								<tr>
+					<a id="gg" onclick="myFunction('g','gg')" >
+					<div id="g" style="float:left;line-height:88px;font-size:5em;vertical-align:middle;height:88px;width:88px;text-align:center;border-top:1px solid #98bf21;border-right:1px solid #98bf21;border-bottom:1px solid white;border-left:1px solid white">
+					
+							
+						
+					</div>
+					</a>
+					
+					<a id="hh" onclick="myFunction('h','hh')">
+					<div id="h" style="float:left;height:88px;width:88px;text-align:center;border-left:1px solid #98bf21;border-right:1px solid #98bf21;border-top:1px solid #98bf21;border-bottom:1px solid white;line-height:88px;font-size:5em;vertical-align:middle">
+					
+					</div>
+					</a>
+					
+					<a id="ii" onclick="myFunction('i','ii')">
+					<div id="i" style="float:right;height:88px;width:88px;text-align:center;border-left:1px solid #98bf21;border-top:1px solid #98bf21;border-right:1px solid white;border-bottom:1px solid white;line-height:88px;font-size:5em;vertical-align:middle">
+					
+					</div>
+					</a>
+				</tr>
+			</table>
+		</div>
+		<p id="Com"></p>
+	</body>
+	</center>
+	
+</html>
