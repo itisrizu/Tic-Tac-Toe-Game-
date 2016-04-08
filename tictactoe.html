@@ -5,11 +5,101 @@
 		<title>
 			Tic Tac Toe Game
 		</title>
-		<style>
+		
+	<style type="text/css">
+		
 		a:visited{
 		onclick:return false;
 		}
+		body{
+		
+		}
+		#outer_box{
+		
+		transition:all 2s;
+		
+		
+		
+		}
+		.grid{
+			
+			transition:all 0.6s;
+			
+		}
+		
+		#restart{
+font-weight:bold;
+transition:all 0.5s;
+-webkit-transition:all .2s;
+-webkit-border-radius:5px;
+line-height:50px;
+color:#222;
+background:#e3e3e3;
+width:270px;
+text-align:center;
+border-radius:5px;
+box-shadow:0px 0px 2px rgpa(0,0,0,0.5s),
+			1px 1px 5px rgpa(0,0,0,.5);
+
+}
+#restart:hover{
+
+	color:white;
+	background:#333;
+	cursor:pointer;
+	}
+		
+		
+		#dota{
+height:20px;
+width:20px;
+
+border-radius:10px;
+animation:dance 1s infinite;
+float:left}
+
+#dotb{
+height:20px;
+
+width:20px;
+
+border-radius:10px;
+
+animation:dance 1s 0.1s infinite;
+float:right;
+}
+#lef{
+float:left;
+}
+#rig{
+float:right;
+}
+
+#dotc{
+
+height:20px;
+width:20px;
+border-radius:10px;
+animation:dance 1s 0.2s infinite;
+float:right;
+}
+
+@keyframes dance{
+
+0%{
+transform:translate3d(0px,0px,0px);
+}
+50%{
+transform:translate3d(0px,20px,0px);
+}
+100%{
+transform:translate3d(0px,0px,0px);
+}
+}
+
+
 		</style>
+		
 
 				<script>
 				var x=1;
@@ -27,18 +117,30 @@
 				checkStatus();
 				
 				}
+				
+				function printWon(){
+				document.getElementById("dota").innerHTML="W";
+				document.getElementById("dotb").innerHTML="O";
+				document.getElementById("dotc").innerHTML="N";
+				document.getElementById("restart").innerHTML="Restart";
+				}
 				function checkStatus(){
 					if(document.getElementById("a").innerHTML===document.getElementById("b").innerHTML&&document.getElementById("a").innerHTML===document.getElementById("c").innerHTML){
-						document.getElementById("Com").innerHTML="Won";
+						var c=document.getElementById("a").innerHTML;
+						document.getElementById("Com").innerHTML=">>> Player - "+c+" <<<";
+						printWon();
 						document.getElementById("a").style.backgroundColor="#87ceeb";
 						document.getElementById("b").style.backgroundColor="#87ceeb";
 						document.getElementById("c").style.backgroundColor="#87ceeb";
 						closeGrids();
+						printWon();
 					}
 				
 				
 					if(document.getElementById("d").innerHTML===document.getElementById("e").innerHTML&&document.getElementById("d").innerHTML===document.getElementById("f").innerHTML){
-						document.getElementById("Com").innerHTML="Won";
+						var c=document.getElementById("d").innerHTML;
+						document.getElementById("Com").innerHTML=">>> Player - "+c+" <<<";
+						printWon();
 						document.getElementById("d").style.backgroundColor="#87ceeb";
 						document.getElementById("e").style.backgroundColor="#87ceeb";
 						document.getElementById("f").style.backgroundColor="#87ceeb";
@@ -46,7 +148,9 @@
 					}
 					
 					if(document.getElementById("g").innerHTML===document.getElementById("h").innerHTML&&document.getElementById("g").innerHTML===document.getElementById("i").innerHTML){
-						document.getElementById("Com").innerHTML="Won";
+						var c=document.getElementById("g").innerHTML;
+						document.getElementById("Com").innerHTML=">>> Player - "+c+" <<<";
+						printWon();
 						document.getElementById("g").style.backgroundColor="#87ceeb";
 						document.getElementById("h").style.backgroundColor="#87ceeb";
 						document.getElementById("i").style.backgroundColor="#87ceeb";
@@ -54,31 +158,39 @@
 					}
 					
 					if(document.getElementById("a").innerHTML===document.getElementById("d").innerHTML&&document.getElementById("a").innerHTML===document.getElementById("g").innerHTML){
-						document.getElementById("Com").innerHTML="Won";
+						var c=document.getElementById("a").innerHTML;
+						document.getElementById("Com").innerHTML=">>> Player - "+c+" <<<";
+						printWon();
 						document.getElementById("a").style.backgroundColor="#87ceeb";
 						document.getElementById("d").style.backgroundColor="#87ceeb";
 						document.getElementById("g").style.backgroundColor="#87ceeb";
 						closeGrids();
 					}
 					
-					if(document.getElementById("b").innerHTML===document.getElementById("e").innerHTML&&document.getElementById("e").innerHTML===document.getElementById("h").innerHTML){
-						document.getElementById("Com").innerHTML="Won";
+					if(document.getElementById("b").innerHTML===document.getElementById("e").innerHTML&&document.getElementById("b").innerHTML===document.getElementById("h").innerHTML){
+						var c=document.getElementById("b").innerHTML;
+						document.getElementById("Com").innerHTML=">>> Player - "+c+" <<<";
+						printWon();
 						document.getElementById("b").style.backgroundColor="#87ceeb";
 						document.getElementById("e").style.backgroundColor="#87ceeb";
 						document.getElementById("h").style.backgroundColor="#87ceeb";
 						closeGrids();
-					}/*
+					} 
 					
 					if(document.getElementById("c").innerHTML===document.getElementById("f").innerHTML&&document.getElementById("c").innerHTML===document.getElementById("i").innerHTML){
-						document.getElementById("Com").innerHTML="Won";
+						var c=document.getElementById("c").innerHTML;
+						document.getElementById("Com").innerHTML=">>> Player - "+c+" <<<";
+						printWon();
 						document.getElementById("c").style.backgroundColor="#87ceeb";
 						document.getElementById("f").style.backgroundColor="#87ceeb";
 						document.getElementById("i").style.backgroundColor="#87ceeb";
 						closeGrids();
-					}*/
+					}
 					
 					if(document.getElementById("a").innerHTML===document.getElementById("e").innerHTML&&document.getElementById("a").innerHTML===document.getElementById("i").innerHTML){
-						document.getElementById("Com").innerHTML="Won";
+						var c=document.getElementById("a").innerHTML;
+						document.getElementById("Com").innerHTML=">>> Player - "+c+" <<<";
+						printWon();
 						document.getElementById("a").style.backgroundColor="#87ceeb";
 						document.getElementById("e").style.backgroundColor="#87ceeb";
 						document.getElementById("i").style.backgroundColor="#87ceeb";
@@ -86,7 +198,10 @@
 					}
 					
 					if(document.getElementById("c").innerHTML===document.getElementById("e").innerHTML&&document.getElementById("c").innerHTML===document.getElementById("g").innerHTML){
-						document.getElementById("Com").innerHTML="Won";
+						var c=document.getElementById("c").innerHTML;
+						document.getElementById("Com").innerHTML=">>> Player - "+c+" <<<";
+						printWon();
+						document.getElementById("c").style.backgroundColor="#87ceeb";
 						document.getElementById("c").style.backgroundColor="#87ceeb";
 						document.getElementById("e").style.backgroundColor="#87ceeb";
 						document.getElementById("g").style.backgroundColor="#87ceeb";
@@ -106,23 +221,29 @@
 				document.getElementById("hh").onclick="return false";
 				document.getElementById("ii").onclick="return false";
 				}
+				function reload(){
+				location.reload();
+				}
 				</script>
 			
 					
 	</head>
 	<center>
 	<body>
-		<h2 style="font-family:Comic sans ms,Verdana;color:red">
-			Tic Tac Toe Game!
+		<h2 style="font-family:Comic sans ms,Verdana;color:#111">
+			# Tic Tac Toe Game!
 		</h2>
+		<p id="Com"></p>
+		<div id="updn" style="width:60px;"><div id="lef"><div id="dota"></div><div id="dotb"></div></div><div id="rig"><div id="dotc"></div></div></div><br/>
+		<div id="updn" style="width:60px;"><div id="lef"><div id="dota"></div><div id="dotb"></div></div><div id="rig"><div id="dotc"></div></div></div><br/>
+		
 		<div id="outer_box" style="width:270px;height:270px">
 		
 			<table>
 				<tr>
 					<a id="aa" onclick="myFunction('a','aa')">
-					<div id="a" style="line-height:88px;font-size:5em;vertical-align:middle;float:left;height:88px;width:88px;text-align:center;border-right:1px solid #98bf21;border-bottom:1px solid #98bf21;border-left:1px solid white ;border-top:1px solid white">
-					 
-							
+					<div class="grid" id="a" style="line-height:88px;font-size:5em;vertical-align:middle;float:left;height:88px;width:88px;text-align:center;border-right:1px solid #98bf21;border-bottom:1px solid #98bf21;border-left:1px solid white ;border-top:1px solid white">
+					 	
 						</div>	
 							
 	
@@ -131,33 +252,47 @@
 						
 					</a>
 					<a id="bb" onclick="myFunction('b','bb')">
-					<div id="b" style="line-height:88px;background-color:white;font-size:5em;vertical-align:middle;float:left;height:88px;width:88px;text-align:center;border-left:1px solid #98bf21;border-bottom:1px solid #98bf21;border-right:1px solid #98bf21;border-top:1px solid white">
+					<div class="grid" id="b" style="line-height:88px;background-color:white;font-size:5em;vertical-align:middle;float:left;height:88px;width:88px;text-align:center;border-left:1px solid #98bf21;border-bottom:1px solid #98bf21;border-right:1px solid #98bf21;border-top:1px solid white">
+					
 					
 					</div>
 					</a>
 					<a id="cc" onclick="myFunction('c','cc')">
-					<div id="c" style="line-height:88px;background-color:white;font-size:5em;vertical-align:middle;float:right;height:88px;width:88px;text-align:center;border-left:1px solid #98bf21;border-bottom:1px solid #98bf21;border-top:1px solid white;border-right:1px solid white">
+					<div class="grid" id="c" style="line-height:88px;background-color:white;font-size:5em;vertical-align:middle;float:right;height:88px;width:88px;text-align:center;border-left:1px solid #98bf21;border-bottom:1px solid #98bf21;border-top:1px solid white;border-right:1px solid white">
+					
+					
 					
 					</div>
 					</a>
 				</tr>
 				<tr>
 					<a id="dd" onclick="myFunction('d','dd')">
-						<div id="d" style="float:left;line-height:88px;height:88px;width:88px;text-align:center;border-top:1px solid #98bf21;border-right:1px solid #98bf21;border-bottom:1px solid #98bf21;border-left:1px solid white;font-size:5em;vertical-align:middle">
-				
+						<div class="grid" id="d" style="float:left;line-height:88px;height:88px;width:88px;text-align:center;border-top:1px solid #98bf21;border-right:1px solid #98bf21;border-bottom:1px solid #98bf21;border-left:1px solid white;font-size:5em;vertical-align:middle">
+					<!style="line-height:88px;font-size:5em;vertical-align:middle">
 							
-						
+					
+
+					
 					</div>
 					</a>
 					
 					<a id="ee" onclick="myFunction('e','ee')">
-					<div id="e" style="float:left;height:88px;width:88px;text-align:center;border:1px solid #98bf21;line-height:88px;font-size:5em;vertical-align:middle">
+					<div class="grid" id="e" style="float:left;height:88px;width:88px;text-align:center;border:1px solid #98bf21;line-height:88px;font-size:5em;vertical-align:middle">
+					
+					
+					
+					
 					
 					</div>
 					</a>
 					
 					<a id="ff" onclick="myFunction('f','ff')">
-					<div id="f" style="float:left;height:88px;width:88px;text-align:center;border-left:1px solid #98bf21;border-bottom:1px solid #98bf21;border-top:1px solid #98bf21;border-right:px solid white;line-height:88px;font-size:5em;vertical-align:middle">
+					<div class="grid" id="f" style="float:left;height:88px;width:88px;text-align:center;border-left:1px solid #98bf21;border-bottom:1px solid #98bf21;border-top:1px solid #98bf21;border-right:px solid white;line-height:88px;font-size:5em;vertical-align:middle">
+					
+					
+					
+					
+					
 					
 					</div>
 					</a>
@@ -166,28 +301,51 @@
 				</tr>
 								<tr>
 					<a id="gg" onclick="myFunction('g','gg')" >
-					<div id="g" style="float:left;line-height:88px;font-size:5em;vertical-align:middle;height:88px;width:88px;text-align:center;border-top:1px solid #98bf21;border-right:1px solid #98bf21;border-bottom:1px solid white;border-left:1px solid white">
+					<div class="grid" id="g" style="float:left;line-height:88px;font-size:5em;vertical-align:middle;height:88px;width:88px;text-align:center;border-top:1px solid #98bf21;border-right:1px solid #98bf21;border-bottom:1px solid white;border-left:1px solid white">
 					
 							
-						
+					
+
+
+
+					
 					</div>
 					</a>
 					
-					<a id="hh" onclick="myFunction('h','hh')">
-					<div id="h" style="float:left;height:88px;width:88px;text-align:center;border-left:1px solid #98bf21;border-right:1px solid #98bf21;border-top:1px solid #98bf21;border-bottom:1px solid white;line-height:88px;font-size:5em;vertical-align:middle">
+					<a id="hh" onclick="myFunction('h','hh')" >
+					<div class="grid" id="h" style="float:left;height:88px;width:88px;text-align:center;border-left:1px solid #98bf21;border-right:1px solid #98bf21;border-top:1px solid #98bf21;border-bottom:1px solid white;line-height:88px;font-size:5em;vertical-align:middle">
+					
+					
+					
+					
+					
+					
+					
 					
 					</div>
 					</a>
 					
 					<a id="ii" onclick="myFunction('i','ii')">
-					<div id="i" style="float:right;height:88px;width:88px;text-align:center;border-left:1px solid #98bf21;border-top:1px solid #98bf21;border-right:1px solid white;border-bottom:1px solid white;line-height:88px;font-size:5em;vertical-align:middle">
+					<div class="grid" id="i" style="float:right;height:88px;width:88px;text-align:center;border-left:1px solid #98bf21;border-top:1px solid #98bf21;border-right:1px solid white;border-bottom:1px solid white;line-height:88px;font-size:5em;vertical-align:middle">
+					
+					
+					
+					
+					
+					
+					
+					
 					
 					</div>
 					</a>
 				</tr>
 			</table>
-		</div>
-		<p id="Com"></p>
+		</div><br/>
+		
+		
+		<div id="restart" onclick="reload()"></div>
+	
+		
 	</body>
 	</center>
 	
