@@ -125,6 +125,11 @@ transform:translate3d(0px,0px,0px);
 				document.getElementById("restart").innerHTML="Restart";
 				}
 				function checkStatus(){
+					if(x==10){
+					document.getElementById("Com").innerHTML=">>> Match Draw <<<";
+					document.getElementById("restart").innerHTML="Restart";			
+					}
+					
 					if(document.getElementById("a").innerHTML===document.getElementById("b").innerHTML&&document.getElementById("a").innerHTML===document.getElementById("c").innerHTML){
 						var c=document.getElementById("a").innerHTML;
 						document.getElementById("Com").innerHTML=">>> Player - "+c+" <<<";
