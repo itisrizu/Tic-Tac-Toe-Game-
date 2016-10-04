@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="shortcut icon" href="images/ttt.png" type="image/png" />
+		<title>
+			Tic Tac Toe Game
+		</title>
+		
+	<style type="text/css">
+	body{
+	background-image: url(images/hotex.jpg);
+	}
+		a{
+		color:inherit;
+		text-decoration:none;
+		-webkit-touch-callout:none;
+		-webkit-user-select:none;
+		-khtml-user-select:none;
+		-moz-user-select:none;
+		-ms-user-select-none;
+		user-select:none;
+		}
+		a:visited{
+		onclick:return false;
+		}
+		body{
+		font-family:ROBOTO,Helvetica,sans-serif,"Times New Roman",Times;
+		
+		}
+
+		#updn{
+		font-family:"Helvetica Rounded";
+		font-weight:bold;
+		color:#008000;
+		}
+		#outer_box{
+		
+		transition:all 2s;
+		
+		}
+		.grid{
+			
+			transition:all 0.6s;
+			box-shadow:inset 0 0 10px #000000;
+			
+		}
+		#footer{
+		padding:3px;
+		}
+		
+		#restart{
+font-weight:bold;
+transition:all 0.5s;
+-webkit-transition:all .2s;
+-webkit-border-radius:5px;
+line-height:50px;	
+color:white;
+background:#333;
+font family:Times;
+letter-spacing:2px;
+width:270px;
+text-align:center;
+border-radius:5px;
+box-shadow:0px 0px 2px rgpa(0,0,0,0.5s),
+			1px 1px 5px rgpa(0,0,0,.5);
+
+}
+#restart:hover{
+	color:#000000;
+/*background:#e3e3e3;*/
+background-color:#a0a0a0;
+
+	cursor:pointer;
+	}
+		
+		
+		#dota{
+height:20px;
+width:20px;
+
+border-radius:10px;/*
+animation:dance 1s infinite;*/
+float:left}
+
+#dotb{
+height:20px;
+
+width:20px;
+
+border-radius:10px;
+/*
+animation:dance 1s 0.1s infinite;*/
+float:right;
+}
+#lef{
+float:left;
+}
+#rig{
+float:right;
+}
+
+#dotc{
+
+height:20px;
+width:20px;
+border-radius:10px;/*
+animation:dance 1s 0.2s infinite;*/
+float:right;
+}
+
+@keyframes dance{
+
+0%{
+transform:translate3d(0px,0px,0px);
+}
+50%{
+transform:translate3d(0px,20px,0px);
+}
+100%{
+transform:translate3d(0px,0px,0px);
+}
+}
+.fb:hover,.gplus:hover,.twitter:hover{
+	height:40px;
+	width:40px;
+}
+
+#MySocialLinks{
+display:none;
+}
+#footmark{
+cursor:pointer;
+}
+
+
+		</style>
+		
+
+				<script type="text/javascript">
+				var x=1;
+				function myFunction(v,v2){
+				if(x%2!==0){
+				document.getElementById(v).innerHTML="O";
+				document.getElementById(v2).onclick="return false";
+				x++;
+				}
+				else{
+				document.getElementById(v).innerHTML="X";
+				document.getElementById(v2).onclick="return false";
+				x++;
+				}
+				checkStatus();
+				
+				}
+				
+				function printWon(){
+				document.getElementById("wonpad").style.padding="22px";
+				document.getElementById("dota").innerHTML="W";
+				document.getElementById("dota").style.animation="dance 1s infinite";
+				document.getElementById("dotb").innerHTML="O";
+				document.getElementById("dotb").style.animation="dance 1s 0.1s infinite";
+				document.getElementById("dotc").innerHTML="N";
+				document.getElementById("dotc").style.animation="dance 1s 0.2s infinite";
+				document.getElementById("restart").innerHTML="Restart";
+				}
+				function checkStatus(){
+				
+				if(x==10){
+				document.getElementById("Com").innerHTML=">>> Match Drawn <<<";
+				document.getElementById("restart").innerHTML="Restart";
+				}
+				
+				if(document.getElementById("a").innerHTML===document.getElementById("b").innerHTML&&document.getElementById("a").innerHTML===document.getElementById("c").innerHTML){
+						var c=document.getElementById("a").innerHTML;
+						document.getElementById("Com").innerHTML=">>> Player - "+c+" <<<";
+						printWon();
+						document.getElementById("a").style.backgroundColor="#87ceeb";
+						document.getElementById("b").style.backgroundColor="#87ceeb";
+						document.getElementById("c").style.backgroundColor="#87ceeb";
+						closeGrids();
+						printWon();
+					}
+				
+				
+					if(document.getElementById("d").innerHTML===document.getElementById("e").innerHTML&&document.getElementById("d").innerHTML===document.getElementById("f").innerHTML){
+						var c=document.getElementById("d").innerHTML;
+						document.getElementById("Com").innerHTML=">>> Player - "+c+" <<<";
+						printWon();
+						document.getElementById("d").style.backgroundColor="#87ceeb";
+						document.getElementById("e").style.backgroundColor="#87ceeb";
+						document.getElementById("f").style.backgroundColor="#87ceeb";
+						closeGrids();
+					}
+					
+					if(document.getElementById("g").innerHTML===document.getElementById("h").innerHTML&&document.getElementById("g").innerHTML===document.getElementById("i").innerHTML){
+						var c=document.getElementById("g").innerHTML;
+						document.getElementById("Com").innerHTML=">>> Player - "+c+" <<<";
+						printWon();
+						document.getElementById("g").style.backgroundColor="#87ceeb";
+						document.getElementById("h").style.backgroundColor="#87ceeb";
+						document.getElementById("i").style.backgroundColor="#87ceeb";
+						closeGrids();
+					}
+					
+					if(document.getElementById("a").innerHTML===document.getElementById("d").innerHTML&&document.getElementById("a").innerHTML===document.getElementById("g").innerHTML){
+						var c=document.getElementById("a").innerHTML;
+						document.getElementById("Com").innerHTML=">>> Player - "+c+" <<<";
+						printWon();
+						document.getElementById("a").style.backgroundColor="#87ceeb";
+						document.getElementById("d").style.backgroundColor="#87ceeb";
+						document.getElementById("g").style.backgroundColor="#87ceeb";
+						closeGrids();
+					}
+					
+					if(document.getElementById("b").innerHTML===document.getElementById("e").innerHTML&&document.getElementById("b").innerHTML===document.getElementById("h").innerHTML){
+						var c=document.getElementById("b").innerHTML;
+						document.getElementById("Com").innerHTML=">>> Player - "+c+" <<<";
+						printWon();
+						document.getElementById("b").style.backgroundColor="#87ceeb";
+						document.getElementById("e").style.backgroundColor="#87ceeb";
+						document.getElementById("h").style.backgroundColor="#87ceeb";
+						closeGrids();
+					} 
+					
+					if(document.getElementById("c").innerHTML===document.getElementById("f").innerHTML&&document.getElementById("c").innerHTML===document.getElementById("i").innerHTML){
+						var c=document.getElementById("c").innerHTML;
+						document.getElementById("Com").innerHTML=">>> Player - "+c+" <<<";
+						printWon();
+						document.getElementById("c").style.backgroundColor="#87ceeb";
+						document.getElementById("f").style.backgroundColor="#87ceeb";
+						document.getElementById("i").style.backgroundColor="#87ceeb";
+						closeGrids();
+					}
+					
+					if(document.getElementById("a").innerHTML===document.getElementById("e").innerHTML&&document.getElementById("a").innerHTML===document.getElementById("i").innerHTML){
+						var c=document.getElementById("a").innerHTML;
+						document.getElementById("Com").innerHTML=">>> Player - "+c+" <<<";
+						printWon();
+						document.getElementById("a").style.backgroundColor="#87ceeb";
+						document.getElementById("e").style.backgroundColor="#87ceeb";
+						document.getElementById("i").style.backgroundColor="#87ceeb";
+						closeGrids();
+					}
+					
+					if(document.getElementById("c").innerHTML===document.getElementById("e").innerHTML&&document.getElementById("c").innerHTML===document.getElementById("g").innerHTML){
+						var c=document.getElementById("c").innerHTML;
+						document.getElementById("Com").innerHTML=">>> Player - "+c+" <<<";
+						printWon();
+						document.getElementById("c").style.backgroundColor="#87ceeb";
+						document.getElementById("c").style.backgroundColor="#87ceeb";
+						document.getElementById("e").style.backgroundColor="#87ceeb";
+						document.getElementById("g").style.backgroundColor="#87ceeb";
+						closeGrids();
+					}
+					
+				}
+				
+				function closeGrids(){
+				document.getElementById("aa").onclick="return false";
+				document.getElementById("bb").onclick="return false";
+				document.getElementById("cc").onclick="return false";
+				document.getElementById("dd").onclick="return false";
+				document.getElementById("ee").onclick="return false";
+				document.getElementById("ff").onclick="return false";
+				document.getElementById("gg").onclick="return false";
+				document.getElementById("hh").onclick="return false";
+				document.getElementById("ii").onclick="return false";
+				}
+				function reload(){
+				location.reload();
+				}
+				
+				function socialbuttons(){
+				/*getElementById("MySocialLinks").style.display="block";*/
+				
+				if(document.getElementById("MySocialLinks").style.display=="none"){
+					document.getElementById("MySocialLinks").style.display="inline";
+				}
+				
+				else if(document.getElementById("MySocialLinks").style.display==""){
+					document.getElementById("MySocialLinks").style.display="inline";
+				}
+				else{
+				document.getElementById("MySocialLinks").style.display="none";
+				}
+				
+				}
+				</script>
+			
+					
+	</head>
+	<center>
+	<body>
+	
+		
+		<div style="font-weight:600" id="Com"></div>
+		<div id="updn" style="width:60px;"><div id="lef"><div id="dota"></div><div id="dotb"></div></div><div id="rig"><div id="dotc"></div></div></div>
+		<div id="wonpad" style="padding:1px;"></div>
+		<div id="outer_box" style="width:270px;height:270px">
+		
+			<table>
+				<tr>
+					<a id="aa" onclick="myFunction('a','aa')">
+					<div class="grid" id="a" style="line-height:88px;font-size:5em;vertical-align:middle;float:left;height:88px;width:88px;text-align:center;border-right:1px solid #98bf21;border-bottom:1px solid #98bf21;border-left:1px solid grey ;border-top:1px solid grey">
+					 	
+						</div>	
+							
+	
+							
+							
+						
+					</a>
+					<a id="bb" onclick="myFunction('b','bb')">
+					<div class="grid" id="b" style="line-height:88px;font-size:5em;vertical-align:middle;float:left;height:88px;width:88px;text-align:center;border-left:1px solid #98bf21;border-bottom:1px solid #98bf21;border-right:1px solid #98bf21;border-top:1px solid grey">
+					
+					
+					</div>
+					</a>
+					<a id="cc" onclick="myFunction('c','cc')">
+					<div class="grid" id="c" style="line-height:88px;font-size:5em;vertical-align:middle;float:right;height:88px;width:88px;text-align:center;border-left:1px solid #98bf21;border-bottom:1px solid #98bf21;border-top:1px solid grey;border-right:1px solid grey">
+					
+					
+					
+					</div>
+					</a>
+				</tr>
+				<tr>
+					<a id="dd" onclick="myFunction('d','dd')">
+						<div class="grid" id="d" style="float:left;line-height:88px;height:88px;width:88px;text-align:center;border-top:1px solid #98bf21;border-right:1px solid #98bf21;border-bottom:1px solid #98bf21;border-left:1px solid grey;font-size:5em;vertical-align:middle">
+					<!style="line-height:88px;font-size:5em;vertical-align:middle">
+							
+					
+
+					
+					</div>
+					</a>
+					
+					<a id="ee" onclick="myFunction('e','ee')">
+					<div class="grid" id="e" style="float:left;height:88px;width:88px;text-align:center;border:1px solid #98bf21;line-height:88px;font-size:5em;vertical-align:middle">
+					
+					
+					
+					
+					
+					</div>
+					</a>
+					
+					<a id="ff" onclick="myFunction('f','ff')">
+					<div class="grid" id="f" style="float:left;height:88px;width:88px;text-align:center;border-left:1px solid #98bf21;border-bottom:1px solid #98bf21;border-top:1px solid #98bf21;border-right:1px solid grey;line-height:88px;font-size:5em;vertical-align:middle">
+					
+					
+					
+					
+					
+					
+					</div>
+					</a>
+					
+					
+				</tr>
+								<tr>
+					<a id="gg" onclick="myFunction('g','gg')" >
+					<div class="grid" id="g" style="float:left;line-height:88px;font-size:5em;vertical-align:middle;height:88px;width:88px;text-align:center;border-top:1px solid #98bf21;border-right:1px solid #98bf21;border-bottom:1px solid grey;border-left:1px solid grey">
+					
+							
+					
+
+
+
+					
+					</div>
+					</a>
+					
+					<a id="hh" onclick="myFunction('h','hh')" >
+					<div class="grid" id="h" style="float:left;height:88px;width:88px;text-align:center;border-left:1px solid #98bf21;border-right:1px solid #98bf21;border-top:1px solid #98bf21;border-bottom:1px solid grey;line-height:88px;font-size:5em;vertical-align:middle">
+					
+					
+					
+					
+					
+					
+					
+					
+					</div>
+					</a>
+					
+					<a id="ii" onclick="myFunction('i','ii')">
+					<div class="grid" id="i" style="float:right;height:88px;width:88px;text-align:center;border-left:1px solid #98bf21;border-top:1px solid #98bf21;border-right:1px solid grey;border-bottom:1px solid grey;line-height:88px;font-size:5em;vertical-align:middle">
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					</div>
+					</a>
+				</tr>
+			</table>
+		</div><br/>
+		
+		
+		<div id="restart" onclick="reload()"></div><br/>
+		<div id="footer" style="border-top-style: dotted;font-size:0.8em;text-align:right;">
+		<a href="https://www.github.com/rizubiswas"><div style="float:left;"><img style="position:left" src="images/GitHub-Mark-32px.png" alt="GitHub-Mark-32px.png" height="32px" width="32px" ></div></a>
+		<div id="footmark" onclick="socialbuttons()" style="line-height:250%"><a>&copy;&nbsp;2016&nbsp;Rizu&nbsp;Biswas</a></div>
+		<div style="float:right"id="MySocialLinks">
+		<div style="float:left" id="fb"><a target="_blank" href="https://www.fb.com/rizub1"><img class="fb" style="position:left" src="images/fb64.png" alt="fb64.png" height="32px" width="32px" ></a></div>&nbsp;&nbsp;<div style="float:left" id="twitter"><a target="_blank" href="https://www.twitter.com/rizu_biswas"><img class="twitter" style="position:left" src="images/twitter64.png" alt="twitter64.png" height="32px" width="32px" ></a></div>&nbsp;&nbsp;<div style="float:left" id="gplus"><a target="_blank" href="https://plus.google.com/116973080831470045199"> <img class="gplus" style="position:left" src="images/gplus64.png" alt="gplus.png" height="32px" width="32px" ></a></div></div>
+		</div>
+		</div>
+	
+		
+	</body>
+	</center>
+	
+</html>
